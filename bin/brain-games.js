@@ -7,15 +7,15 @@ console.log(`Hello, ${name}!`);
 
 let count = 0;
 
-const getRandomNumber = (min, max) => {
-    return Math.round(min - 0.5 + Math.random() * (max - min + 1));
-};
+function getRandomNumber(min, max) {
+    return Math.round(Math.random() * (max - min) + min);
+}
 
 game();
 
 function game() {
     console.log('Answer "yes" if the number is even, otherwise answer "no".');
-    let int = getRandomNumber(1,30);
+    let int = getRandomNumber(1,100);
     let correct = int % 2 == 0 ? 'yes' : 'no';
     console.log(`Question: ${int}`);
     const answer = readlineSync.question('Your answer: ');
