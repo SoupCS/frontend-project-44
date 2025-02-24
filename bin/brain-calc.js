@@ -1,9 +1,9 @@
 import readlineSync from 'readline-sync';
 
-
 console.log('Welcome to the Brain Games!');
 const name = readlineSync.question('May I have your name? ');
 console.log(`Hello, ${name}!`);
+console.log('What is the result of the expression?');
 
 let count = 0;
 
@@ -14,26 +14,21 @@ const getRandomNumber = (min, max) => {
 game();
 
 function game() {
-    console.log('Answer "yes" if the number is even, otherwise answer "no".');
-    let int = getRandomNumber(1,30);
-    let correct = int % 2 == 0 ? 'yes' : 'no';
-    console.log(`Question: ${int}`);
+    console.log('What is the result of the expression?');
+    let first = getRandomNumber(1,30);
+    let second = getRandomNumber(1,30);
+    let correct = first + second;
+    console.log(`Question: ${first} + ${second}`);
     const answer = readlineSync.question('Your answer: ');
-    if (answer == correct) {
+    if (!answer.isNaN && answer == correct) {
         console.log('Correct!');
         ++count;
         if (count === 3) {
             console.log(`Congratulations, ${name}!`);
-            ;
         } else {
             game();
         }
     } else {
-        console.log(`'${answer}' is wrong answer ;(. Correct answer was 'no'.\nLet's try again, ${name}!`);
+        console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correct}'.`);
     }
 }
-
-
-
-
-
