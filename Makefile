@@ -8,5 +8,7 @@ brain-gcd:
 	node bin/brain-gcd.js
 publish:
 	npm publish --dry-run
+brain-progression:
+	node bin/brain-progression.js
 lint:
 	npx eslint .
