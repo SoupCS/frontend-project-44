@@ -29,6 +29,7 @@ function game() {
             game();
         }
     } else {
-        console.log(`'${answer}' is wrong answer ;(. Correct answer was 'no'.\nLet's try again, ${name}!`);
+        console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correct}'.`);
+        console.log(`Let's try again, Sam!`);
     }
 }
