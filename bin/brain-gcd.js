@@ -29,7 +29,7 @@ export default function game() {
   const correct = gcd_two_numbers(first, second);
   console.log(`Question: ${first} ${second}`);
   const answer = readlineSync.question('Your answer: ');
-  if (answer === correct) {
+  if (`${answer}` === `${correct}`) {
     console.log('Correct!');
     count += 1;
     if (count === 3) {
