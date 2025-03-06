@@ -1,19 +1,19 @@
 import readlineSync from 'readline-sync';
 
-import {getRandomNumber, welcome} from "../src/cli.js";
+import { getRandomNumber, welcome } from '../src/cli.js';
 
 const name = welcome();
 
 const getProgression = (start, step, length) => {
-    const progression = [];
-  
-    for (let i = 0; i < length; i += 1) {
-      progression.push(start + i * step);
-    }
-  
-    return progression;
+  const progression = [];
+
+  for (let i = 0; i < length; i += 1) {
+    progression.push(start + i * step);
+  }
+
+  return progression;
 };
-  
+
 function progressionggame() {
   const start = getRandomNumber(0, 5);
   const step = getRandomNumber(1, 5);
@@ -28,25 +28,23 @@ function progressionggame() {
 
 let count = 0;
 
-
 function game() {
-    console.log('What number is missing in the progression?');
-    let data = progressionggame();
-    console.log(`Question: ${data[0]}`);
-    const answer = readlineSync.question('Your answer: ');
-    if (answer == data[1]) {
-        console.log('Correct!');
-        ++count;
-        if (count === 3) {
-            console.log(`Congratulations, ${name}!`);
-            
-        } else {
-            game();
-        }
+  console.log('What number is missing in the progression?');
+  const data = progressionggame();
+  console.log(`Question: ${data[0]}`);
+  const answer = readlineSync.question('Your answer: ');
+  if (answer === data[1]) {
+    console.log('Correct!');
+    count += 1;
+    if (count === 3) {
+      console.log(`Congratulations, ${name}!`);
     } else {
-        console.log(`'${answer}' is wrong answer ;(. Correct answer was '${data[1]}'.`);
-        console.log(`Let's try again, ${name}!`);
+      game();
     }
+  } else {
+    console.log(`'${answer}' is wrong answer ;(. Correct answer was '${data[1]}'.`);
+    console.log(`Let's try again, ${name}!`);
+  }
 }
 
 game();
