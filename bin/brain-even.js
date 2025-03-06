@@ -16,7 +16,6 @@ function game() {
         ++count;
         if (count === 3) {
             console.log(`Congratulations, ${name}!`);
-            ;
         } else {
             game();
         }
