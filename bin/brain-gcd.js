@@ -23,13 +23,13 @@ function gcd_two_numbers(x, y) {
 }
 
 export default function game() {
-  console.log('What is the result of the expression?');
+  console.log('Find the greatest common divisor of given numbers.');
   const first = getRandomNumber(1, 100);
   const second = getRandomNumber(1, 100);
   const correct = gcd_two_numbers(first, second);
   console.log(`Question: ${first} ${second}`);
   const answer = readlineSync.question('Your answer: ');
-  if (!answer.isNaN && answer === correct) {
+  if (answer === correct) {
     console.log('Correct!');
     count += 1;
     if (count === 3) {

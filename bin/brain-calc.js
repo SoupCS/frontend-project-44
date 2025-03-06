@@ -13,7 +13,7 @@ function game() {
   const correct = first + second;
   console.log(`Question: ${first} + ${second}`);
   const answer = readlineSync.question('Your answer: ');
-  if (!answer.isNaN && `${answer}` === `${correct}`) {
+  if (`${answer}` === `${correct}`) {
     console.log('Correct!');
     count += 1;
     if (count === 3) {
