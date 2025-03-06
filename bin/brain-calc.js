@@ -6,7 +6,7 @@ const name = welcome();
 
 let count = 0;
 
-export default function game() {
+function game() {
   console.log('What is the result of the expression?');
   const first = getRandomNumber(1, 100);
   const second = getRandomNumber(1, 100);
