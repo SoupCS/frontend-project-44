@@ -1,17 +1,10 @@
-import readlineSync from 'readline-sync';
+import {getRandomNumber, welcome} from "../src/cli.js";
+import readlineSync from "readline-sync";
 
-console.log('Welcome to the Brain Games!');
-const name = readlineSync.question('May I have your name? ');
-console.log(`Hello, ${name}!`);
-console.log('What is the result of the expression?');
+
+const name = welcome();
 
 let count = 0;
-
-function getRandomNumber(min, max) {
-    return Math.round(Math.random() * (max - min) + min);
-}
-
-game();
 
 function game() {
     console.log('What is the result of the expression?');
@@ -30,6 +23,8 @@ function game() {
         }
     } else {
         console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correct}'.`);
-        console.log(`Let's try again, Sam!`);
+        console.log(`Let's try again, ${name}!`);
     }
 }
+
+game();

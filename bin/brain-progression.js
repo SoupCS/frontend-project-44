@@ -1,13 +1,8 @@
 import readlineSync from 'readline-sync';
 
-console.log('Welcome to the Brain Games!');
-const name = readlineSync.question('May I have your name? ');
-console.log(`Hello, ${name}!`);
+import {getRandomNumber, welcome} from "../src/cli.js";
 
-function getRandomNumber(min, max) {
-    return Math.round(Math.random() * (max - min) + min);
-}
-
+const name = welcome();
 
 const getProgression = (start, step, length) => {
     const progression = [];
@@ -28,15 +23,11 @@ function progressionggame() {
   const correctAnswer = progression[hiddenNumber].toString();
   progression[hiddenNumber] = '..';
   const question = progression.join(' ');
-
-  //console.log(question);
- // console.log(correctAnswer);
   return [question, correctAnswer];
 }
 
 let count = 0;
 
-game();
 
 function game() {
     console.log('What number is missing in the progression?');
@@ -54,6 +45,8 @@ function game() {
         }
     } else {
         console.log(`'${answer}' is wrong answer ;(. Correct answer was '${data[1]}'.`);
-        console.log(`Let's try again, Sam!`);
+        console.log(`Let's try again, ${name}!`);
     }
 }
+
+game();
