@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import readlineSync from 'readline-sync';
 import { getRandomNumber, welcome } from '../src/cli.js';
 
@@ -5,7 +6,7 @@ const name = welcome();
 
 let count = 0;
 
-function game() {
+export default function game() {
   console.log('What is the result of the expression?');
   const first = getRandomNumber(1, 100);
   const second = getRandomNumber(1, 100);

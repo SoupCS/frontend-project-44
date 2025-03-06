@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import readlineSync from 'readline-sync';
 import { getRandomNumber, welcome } from '../src/cli.js';
 
@@ -12,7 +13,7 @@ function isPrime(num) {
   return num !== 1;
 }
 
-function game() {
+export default function game() {
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
   const int = getRandomNumber(1, 100);
   const correct = isPrime(int) ? 'yes' : 'no';

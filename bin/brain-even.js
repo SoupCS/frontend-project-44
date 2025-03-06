@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import readlineSync from 'readline-sync';
 import { getRandomNumber, welcome } from '../src/cli.js';
 
@@ -5,7 +6,7 @@ const name = welcome();
 
 let count = 0;
 
-function game() {
+export default function game() {
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
   const int = getRandomNumber(1, 100);
   const correct = int % 2 === 0 ? 'yes' : 'no';

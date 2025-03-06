@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 // eslint-disable-next-line no-param-reassign
 import readlineSync from 'readline-sync';
 import { getRandomNumber, welcome } from '../src/cli.js';
@@ -21,7 +22,7 @@ function gcd_two_numbers(x, y) {
   return x;
 }
 
-function game() {
+export default function game() {
   console.log('What is the result of the expression?');
   const first = getRandomNumber(1, 100);
   const second = getRandomNumber(1, 100);

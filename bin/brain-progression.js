@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import readlineSync from 'readline-sync';
 
 import { getRandomNumber, welcome } from '../src/cli.js';
